@@ -1,0 +1,64 @@
+# =========================
+# Node modules
+# =========================
+node_modules/
+
+# =========================
+# Build output
+# =========================
+out/
+dist/
+*.js
+*.js.map
+*.tsbuildinfo
+
+# =========================
+# VS Code settings
+# =========================
+.vscode/
+.vscode-test/
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Coverage and testing
+# =========================
+coverage/
+.nyc_output/
+*.ts.snap
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+
+# =========================
+# System files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment variables and secrets
+# =========================
+.env
+.env.local
+.env.*.local
+secrets.json
+*.key
+*.pem
+certs/
+keys/
+
+# =========================
+# Optional caches
+# =========================
+.npm/
+.eslintcache/

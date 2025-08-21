@@ -1,0 +1,108 @@
+{
+  "name": "42-line-counter",
+  "displayName": "42LineCounter",
+  "publisher": "42-line-counter",
+  "description": "Count the number of code lines inside C functions with automatic Allman-style formatting.",
+  "version": "0.0.2",
+  "icon": "img/logo_.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "c",
+    "line counter",
+    "42school",
+    "allman style",
+    "code formatter",
+    "function formatter"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "42-line-counter.countLines",
+        "title": "42 Line Counter",
+        "category": ""
+      },
+      {
+        "command": "42-line-counter.removeComments",
+        "title": "42 Line Remove",
+        "category": ""
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceExtname == .c || resourceExtname == .h",
+          "command": "42-line-counter.countLines",
+          "group": "42LineCounter@1"
+        },
+        {
+          "when": "resourceExtname == .c || resourceExtname == .h",
+          "command": "42-line-counter.removeComments",
+          "group": "42LineCounter@2"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "42-line-counter.countLines",
+          "when": "resourceExtname == .c || resourceExtname == .h"
+        },
+        {
+          "command": "42-line-counter.removeComments",
+          "when": "resourceExtname == .c || resourceExtname == .h"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "42-line-counter.countLines",
+        "key": "ctrl+alt+c",
+        "mac": "ctrl+cmd+c",
+        "when": "editorTextFocus && (resourceExtname == .c || resourceExtname == .h)"
+      },
+      {
+        "command": "42-line-counter.removeComments",
+        "key": "ctrl+alt+f",
+        "mac": "ctrl+cmd+f",
+        "when": "editorTextFocus && (resourceExtname == .c || resourceExtname == .h)"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicolasboggio/42-line-counter.git"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "1.60.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^9.32.0",
+    "typescript": "^5.9.2",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  },
+  "files": [
+    "out/**/*",
+    "img/**/*",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "README": "README.md",
+  "CHANGELOG": "CHANGELOG.md"
+}
