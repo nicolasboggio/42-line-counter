@@ -320,3 +320,4 @@ return trimmed.startsWith('// [LINE COUNT]');
 <br>
 
 **v0.0.1** - Initial release : **August 20, 2025**
+**v0.0.2** - Initial release : **August 21, 2025**
