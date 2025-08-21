@@ -37,10 +37,12 @@ export function activate(context: vscode.ExtensionContext) {
             }).then(success => {
                 if (success) {
                     
+
                     const analysis = FunctionFormatter.analyzeCCode(modifiedText);
                     const formatInfo = analysis.functionsFormatted === analysis.functionCount 
-                        ? `✅ ${analysis.functionCount} fonction(s) formatée(s) correctement` 
-                        : `⚠️ ${analysis.functionsFormatted}/${analysis.functionCount} fonction(s) formatée(s)`;
+                        ? `✅ ${analysis.functionCount} function(s) correctly formatted` 
+                        : `⚠️ ${analysis.functionsFormatted}/${analysis.functionCount} function(s) formatted`;
+
                     
                     vscode.window.showInformationMessage(
                         `Line counts updated successfully! ${formatInfo}`

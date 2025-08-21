@@ -41,7 +41,7 @@ The extension provides **two commands**:
 #### ❌ Removing line counters:
 
 - **42 Line Remove**: Removes all previously added line count comments
-  - Press **`Ctrl + Alt + F`** (Windows/Linus)
+  - Press **`Ctrl + Alt + F`** (Windows/Linux)
   - Press **`Ctrl + Cmd + F`** (Mac)
 
 
