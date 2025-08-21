@@ -89,7 +89,7 @@ export function activate(context: vscode.ExtensionContext) {
                 if (success) {
                     const analysis = FunctionFormatter.analyzeCCode(formattedText);
                     vscode.window.showInformationMessage(
-                        `🎯 ${analysis.functionCount} fonction(s) formatée(s) en style Allman !`
+                        `🎯 ${analysis.functionCount} function(s) formatted in Allman style!`
                     );
                 } else {
                     vscode.window.showErrorMessage('Failed to format functions');
@@ -152,18 +152,21 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         }
 
-        try {
-            const analysis = FunctionFormatter.analyzeCCode(text);
-            const isCompliant = FunctionFormatter.isAllmanStyleCompliant(text);
-            
-            const statusIcon = isCompliant ? '✅' : '❌';
-            const styleStatus = isCompliant ? 'Style Allman respecté' : 'Style Allman non respecté';
-            
-            vscode.window.showInformationMessage(
-                `📊 Code Analysis: ${analysis.functionCount} fonctions | ` +
-                `${analysis.functionsFormatted} bien formatées | ` +
-                `${statusIcon} ${styleStatus}`
-            );
+
+try {
+    const analysis = FunctionFormatter.analyzeCCode(text);
+    const isCompliant = FunctionFormatter.isAllmanStyleCompliant(text);
+    
+    const statusIcon = isCompliant ? '✅' : '❌';
+    const styleStatus = isCompliant ? 'Allman style respected' : 'Allman style not respected';
+    
+    vscode.window.showInformationMessage(
+        `📊 Code Analysis: ${analysis.functionCount} function(s) | ` +
+        `${analysis.functionsFormatted} properly formatted | ` +
+        `${statusIcon} ${styleStatus}`
+    );
+
+
 
         } catch (error) {
             vscode.window.showErrorMessage(`Error analyzing code: ${error}`);
